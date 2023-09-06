@@ -1,7 +1,7 @@
 size_inches = (7, 4)
 size_pt = 72 .* size_inches
 
-BDP_AC_FL_HC_total_theme = Theme( fontsize = 12, figure_padding = 5, resolution = size_pt, 
+BPD_AC_FL_HC_total_theme = Theme( fontsize = 12, figure_padding = 5, resolution = size_pt, 
     Axis = (
         titlesize = 13,
         leftspinevisible = false,
@@ -34,7 +34,7 @@ BDP_AC_FL_HC_total_theme = Theme( fontsize = 12, figure_padding = 5, resolution 
     )
 )
 
-BDP_AC_FL_HC_1st_theme = Theme( fontsize = 12, figure_padding = 5, resolution = size_pt,
+BPD_AC_FL_HC_1st_theme = Theme( fontsize = 12, figure_padding = 5, resolution = size_pt,
     Axis = (
         titlesize = 13,
         leftspinevisible = false,
@@ -70,7 +70,7 @@ BDP_AC_FL_HC_1st_theme = Theme( fontsize = 12, figure_padding = 5, resolution = 
         tellwidth = false 
     )
 )
-with_theme(BDP_AC_1st_fig, BDP_AC_FL_HC_1st_theme)
+with_theme(BPD_AC_1st_fig, BPD_AC_FL_HC_1st_theme)
 
 
 AC_FL_HC_1st_theme = Theme( fontsize = 12, figure_padding = 5, resolution = size_pt,
@@ -147,6 +147,7 @@ AC_FL_HC_2nd_theme = Theme( fontsize = 12, figure_padding = 5, resolution = size
 )
 with_theme(AC_FL_HC_1st_fig, AC_FL_HC_1st_theme)
 with_theme(AC_FL_HC_2nd_fig, AC_FL_HC_2nd_theme)
+with_theme(fig_BPD_AC_1st_fig, BPD_AC_FL_HC_1st_theme)
 
 
 
@@ -168,15 +169,15 @@ save("figure6.pdf", with_theme(AC_FL_HC_2nd_fig, AC_FL_HC_2nd_theme),pt_per_unit
 
 
 title_names = [
-    L"f(\text{BDP}, \text{AC}) = 10^{-1.599 + 0.144\text{BDP} + 0.032\text{AC} - 0.000111\text{AC}\cdot\text{BDP}^2 }",
-    L"f(\text{BDP}, \text{AC}) = 10^{-1.7492 + 0.166\text{BDP} + 0.046\text{AC} - 0.002646\text{BDP}\cdot\text{AC} }",
-    L"f(\text{BDP}, \text{AC}) = 10^{-1.1683 + 0.095\text{BDP} + 0.0377\text{AC} - 0.0015\text{BDP}\cdot\text{AC} }",
-    L"f(\text{BDP}, \text{AC}) = 9.337\text{BDP}\cdot\text{AC} - 229",
-    L"f(\text{BDP}, \text{AC}) = 10^{1.13 + 0.181864\text{BDP} + 0.0517505\text{AC} − 3.34825\text{BDP}\cdot\text{AC}/1000) }",
-    L"f(\text{BDP}, \text{AC}) = 10^{1.63 + 0.16\text{BDP} + 0.00111\text{AC}^2 − 0.0000859\text{BDP}\cdot\text{AC}^2) }",
-    L"f(\text{BDP}, \text{AC}) = 10^{2.1315 + 0.0056541\text{BDP}\cdot\text{AC} − 0.00015515\text{BDP}\cdot\text{AC}^2 + 0.000019782\text{AC}^3 + 0.052594\text{BDP}) }",
-    L"f(\text{BDP}, \text{AC}) = 10^{1.879 + 0.084\text{BDP} + 0.026\text{AC}) }",
-    L"f(\text{BDP}, \text{AC}) = −3200.40479 + 157.07186\text{AC} + 15.90391\text{BDP}^2"
+    L"f(\text{BPD}, \text{AC}) = 10^{-1.599 + 0.144\text{BPD} + 0.032\text{AC} - 0.000111\text{AC}\cdot\text{BPD}^2 }",
+    L"f(\text{BPD}, \text{AC}) = 10^{-1.7492 + 0.166\text{BPD} + 0.046\text{AC} - 0.002646\text{BPD}\cdot\text{AC} }",
+    L"f(\text{BPD}, \text{AC}) = 10^{-1.1683 + 0.095\text{BPD} + 0.0377\text{AC} - 0.0015\text{BPD}\cdot\text{AC} }",
+    L"f(\text{BPD}, \text{AC}) = 9.337\text{BPD}\cdot\text{AC} - 229",
+    L"f(\text{BPD}, \text{AC}) = 10^{1.13 + 0.181864\text{BPD} + 0.0517505\text{AC} − 3.34825\text{BPD}\cdot\text{AC}/1000) }",
+    L"f(\text{BPD}, \text{AC}) = 10^{1.63 + 0.16\text{BPD} + 0.00111\text{AC}^2 − 0.0000859\text{BPD}\cdot\text{AC}^2) }",
+    L"f(\text{BPD}, \text{AC}) = 10^{2.1315 + 0.0056541\text{BPD}\cdot\text{AC} − 0.00015515\text{BPD}\cdot\text{AC}^2 + 0.000019782\text{AC}^3 + 0.052594\text{BPD}) }",
+    L"f(\text{BPD}, \text{AC}) = 10^{1.879 + 0.084\text{BPD} + 0.026\text{AC}) }",
+    L"f(\text{BPD}, \text{AC}) = −3200.40479 + 157.07186\text{AC} + 15.90391\text{BPD}^2"
 ]
 
 
