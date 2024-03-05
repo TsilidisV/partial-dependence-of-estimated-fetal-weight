@@ -3,6 +3,8 @@ using CairoMakie, DataFrames, CSV
 xtickweek = (1:2:25, string.(14:2:38))
 xtickweek2 = (1:4:25, string.(14:4:38))
 
+xtickweek2 = (1:3:31, string.(12:3:42))
+
 function fig_BPD_AC_1st_fig()
         size_inches = (8, 10)
         size_pt = 72 .* size_inches

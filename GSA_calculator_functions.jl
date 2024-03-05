@@ -3,7 +3,9 @@ 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
 using XLSX, DataFrames, CSV
 using GlobalSensitivity, QuasiMonteCarlo
 
-df = DataFrame(XLSX.readtable("bounds.xlsx", "Sheet1"))     # Reads the bounds of each variable for every week
+sheet = "Sheet3"
+resulting_directory = "GSA_results/$(sheet)/"
+df = DataFrame(XLSX.readtable("data/bounds.xlsx", sheet))     # Reads the bounds of each variable for every week
 
 bootStrapN = 1      # Number of boostrap runs
 samplesN = 100000   # Number of sobol samples
@@ -41,7 +43,7 @@ function BPD_AC_gsa(; save = false)
     
     if save == true
         for (f,df) in zip(BPD_AC_fun,dfs)
-            CSV.write("GSA_results/$(f).csv", df)
+            CSV.write(resulting_directory*"$(f).csv", df)
         end
     end
 
@@ -86,7 +88,7 @@ function AC_HC_gsa(; save = false)
     
     if save == true
         for (f,df) in zip(AC_HC_fun,dfs)
-            CSV.write("GSA_results/$(f).csv", df)
+            CSV.write(resulting_directory*"$(f).csv", df)
         end
     end
 
@@ -131,7 +133,7 @@ function BPD_AC_FL_gsa(; save = false)
     
     if save == true
         for (f,df) in zip(BPD_AC_FL_fun,dfs)
-            CSV.write("GSA_results/$(f).csv", df)
+            CSV.write(resulting_directory*"$(f).csv", df)
         end
     end
 
@@ -175,7 +177,7 @@ function BPD_AC_FL_HC_gsa(; save = false)
 
     if save == true
         for (f,df) in zip(BPD_AC_FL_HC_fun,dfs)
-            CSV.write("GSA_results/$(f).csv", df)
+            CSV.write(resulting_directory*"$(f).csv", df)
         end
     end
     
@@ -220,7 +222,7 @@ function BPD_FL_HC_gsa(; save = false)
     
     if save == true
         for (f,df) in zip(BPD_FL_HC_fun,dfs)
-            CSV.write("GSA_results/$(f).csv", df)
+            CSV.write(resulting_directory*"$(f).csv", df)
         end
     end
 
@@ -263,7 +265,7 @@ function AC_FL_gsa(; save = false)
 
     if save == true
         for (f,df) in zip(AC_FL_fun,dfs)
-            CSV.write("GSA_results/$(f).csv", df)
+            CSV.write(resulting_directory*"$(f).csv", df)
         end
     end
     
@@ -308,7 +310,7 @@ function AC_FL_HC_gsa(; save = false)
 
     if save == true
         for (f,df) in zip(AC_FL_HC_fun,dfs)
-            CSV.write("GSA_results/$(f).csv", df)
+            CSV.write(resulting_directory*"$(f).csv", df)
         end
     end
     

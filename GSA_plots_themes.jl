@@ -154,6 +154,37 @@ with_theme(fig_BPD_AC_1st_fig, BPD_AC_FL_HC_1st_theme)
 save("figure6.pdf", with_theme(AC_FL_HC_2nd_fig, AC_FL_HC_2nd_theme),pt_per_unit = 1)
 
 
+theme_total() = Theme( fontsize = 12, figure_padding = 2,
+    Axis = (
+        titlesize = 13,
+        leftspinevisible = false,
+        rightspinevisible = false,
+        bottomspinevisible = false,
+        topspinevisible = false,
+        backgroundcolor = "#E5ECF6",
+        xgridcolor = :white,
+        ygridcolor = :white,
+        xtickcolor = "#E5ECF6",
+        ytickcolor = "#E5ECF6",
+        yticklabelcolor = "#2A3F5F",
+        xticklabelcolor = "#2A3F5F",
+        titlecolor = "#0B2D60",
+        xlabelcolor = "#0B2D60"
+    ),
+    ScatterLines = (
+        linewidth = 1.5,
+        markersize = 7,
+    ),
+    Legend = (
+        labelcolor = "#2A3F5F",
+        titlecolor = "#0B2D60",
+        framevisible = false,
+        orientation = :horizontal,
+    ),
+    Label = (;
+        color = "#2A3F5F"
+    )
+)
 
 #F32EA1
 #0BD976

@@ -1,3 +1,5 @@
+using Symbolics
+
 @variables x_1 x_2 x_3 x_4
 
 function r(f, x_variables)
@@ -11,11 +13,7 @@ end
 
 f8r = r(f8, [x_1, x_2, x_3, x_4])
 
-trol([1, 1, 1, 1])
 
-typeof(f8)
-
-typeof(trol)
 
 using GlobalSensitivity, QuasiMonteCarlo
 
