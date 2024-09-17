@@ -3,10 +3,16 @@ using Combinatorics
 using LinearAlgebra
 using GlobalSensitivity, QuasiMonteCarlo
 
+formulas = NamedTuple(
+    [(Symbol(mtdt.id[i]), 
+        @eval (x) -> $(Meta.parse(mtdt.function[i]))
+    ) 
+    for i in 1:nrow(mtdt)]
+)
 
 
-function weight_formula_gsa(mtdt; save = false)
-    resulting_directory = "GSA_results/"
+function weight_formula_gsa_med(mtdt; save = false)
+    resulting_directory = "GSA_results/new_data_3_50cent/"
 
     samplesN = 10^6
     samples = samplesN
@@ -46,6 +52,13 @@ function weight_formula_gsa(mtdt; save = false)
             lb = select(bounds_data, splt.*"_min")[i, :] |> collect
             up = select(bounds_data, splt.*"_max")[i, :] |> collect
 
+            for j in 1:length(splt)
+                if splt[j] == "HC"
+                    lb[j] = select(bounds_data, splt[j].*"_med")[i, :]
+                    @show true
+                end
+            end
+
             A, B = QuasiMonteCarlo.generate_design_matrices(samples, lb, up, sampler)
 
             res = gsa(formulas[Symbol(mtdt.id[j])], Sobol(order = [0,1,2], nboot = bootStrapN), A, B)
@@ -70,3 +83,5 @@ function weight_formula_gsa(mtdt; save = false)
 
     return output
 end
+
+weight_formula_gsa_med(@subset(mtdt, :id .== "f9"); save = true)

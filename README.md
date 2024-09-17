@@ -1,0 +1,2 @@
+# Partial dependence of ultrasonically estimated fetal weight on individual biometric variables
+Code, data, tables and figures for the manuscript titled "Partial dependence of ultrasonically estimated fetal weight on individual biometric variables".
