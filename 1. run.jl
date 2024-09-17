@@ -35,8 +35,10 @@ fig2 = with_theme(theme_UOG()) do
     fig_weight_formula_gsa((@subset(mtdt, :id .!= "f23" )))
 end
 
+# Remove letter labels to work
 figSup = with_theme(theme_UOG()) do
     fig_weight_formula_gsa((@subset(mtdt, :id .!= "f23" )))
 end
 save("figs/figSup.pdf", figSup)
+save("figs/figSup.png", figSup)
 
