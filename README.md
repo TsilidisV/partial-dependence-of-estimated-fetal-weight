@@ -3,5 +3,5 @@ Code, data, tables and figures for the manuscript titled "Partial dependence of 
 
  <figure>
   <img src="figs\figSup.png" alt="Results" style="width:100%">
-  <figcaption>Sobol’ indices for ten of the most commonly used fetal weight estimation formulas. The four hallmark gestational intervals are highlighted in gray</figcaption>
+  <figcaption>Sobol’ indices for 32 commonly used fetal weight estimation formulas. The four hallmark gestational intervals are highlighted in gray</figcaption>
 </figure> 
